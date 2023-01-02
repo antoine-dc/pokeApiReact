@@ -4,12 +4,16 @@
   body{
     background-color: #414141;
   }
-#root{
+main{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 5%;
+}
+
+h1{
+  text-align: center;
 }
 
 article{
