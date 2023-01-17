@@ -1,18 +1,16 @@
 import "./CardPokemon.scss"
+import { useState } from "react"
 
 export function CardPokemon(props) {
   let poke = props.data
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <article
       key={props.index}
-      data-reverse="false"
+      data-reverse={isOpen}
       onClick={(e) => {
-        let currentStatus = e.currentTarget.getAttribute("data-reverse")
-        if (currentStatus === "false") {
-          e.currentTarget.setAttribute("data-reverse", "true")
-        } else {
-          e.currentTarget.setAttribute("data-reverse", "false")
-        }
+        setIsOpen(!isOpen)
+        e.currentTarget.setAttribute("data-reverse", isOpen)
       }}
     >
       <div
