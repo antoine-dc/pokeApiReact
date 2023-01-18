@@ -7,8 +7,8 @@ import { useState } from "react"
 import logo from "./assets/pokemon.png"
 
 function App() {
-  const helloList = data.map((poke, index) => <CardPokemon data={poke} key={index} />)
-  const [cart, updateCart] = useState([])
+  const [pokedex, setPokedex] = useState([])
+  const helloList = data.map((poke, index) => <CardPokemon data={poke} key={index} pokedex={pokedex} setPokedex={setPokedex} />)
 
   return (
     <>
@@ -16,7 +16,7 @@ function App() {
         <img src={logo} alt="logo" />
       </h1>
       <div className="lmj-layout-inner">
-        <Sidebar />
+        <Sidebar pokedex={pokedex} />
         <main>{helloList}</main>
       </div>
     </>

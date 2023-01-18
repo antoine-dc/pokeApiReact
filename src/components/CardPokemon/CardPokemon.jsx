@@ -21,6 +21,21 @@ export function CardPokemon(props) {
           borderColor: getColorHexa(poke.apiTypes[0].name),
         }}
       >
+        <span
+          className="addToPokedex"
+          onClick={(e) => {
+            e.stopPropagation()
+            props.setPokedex([
+              ...props.pokedex,
+              {
+                id: poke.pokedexId,
+                name: poke.name,
+              },
+            ])
+          }}
+        >
+          <img src={iconAdd} />
+        </span>
         <figure className="cardFront">
           <picture>
             <img src={poke.image} alt={poke.name} title={poke.name} />
