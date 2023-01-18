@@ -44,12 +44,13 @@ article[data-reverse="true"] .cardInner {
 .cardBack {
   color: #eeeeee;
   transform: rotateY(180deg);
-  background-image: url("./../assets/pokemonBack.png");
+  background-image: url("./../../assets/pokemonBack.png");
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  z-index: 2;
 
   & {
     a {
@@ -173,5 +174,15 @@ select {
 
   &:hover::after {
     color: #fa6141;
+  }
+}
+
+.addToPokedex {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+  img {
+    width: inherit;
   }
 }

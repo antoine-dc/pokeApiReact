@@ -1,5 +1,6 @@
 import "./CardPokemon.scss"
 import { useState } from "react"
+import iconAdd from "./../../assets/add.png"
 
 export function CardPokemon(props) {
   let poke = props.data
