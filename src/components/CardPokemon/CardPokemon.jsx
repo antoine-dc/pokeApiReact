@@ -5,6 +5,7 @@ import iconAdd from "./../../assets/add.png"
 export function CardPokemon(props) {
   let poke = props.data
   const [isOpen, setIsOpen] = useState(false)
+
   return (
     <article
       key={props.index}
