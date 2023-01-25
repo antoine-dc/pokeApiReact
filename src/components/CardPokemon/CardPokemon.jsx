@@ -1,6 +1,7 @@
 import "./CardPokemon.scss"
 import { useState } from "react"
 import iconAdd from "./../../assets/add.png"
+import { Link } from "react-router-dom"
 
 export function CardPokemon(props) {
   let poke = props.data
@@ -54,7 +55,7 @@ export function CardPokemon(props) {
           </figcaption>
         </figure>
         <div className="cardBack">
-          <a href="#">Voir plus</a>
+          <Link to={"/pokemons/" + poke.id}>Voir plus</Link>
         </div>
       </div>
     </article>
