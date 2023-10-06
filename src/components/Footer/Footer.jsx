@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./Footer.scss"
 
 /*
@@ -9,7 +10,7 @@ rfce : permet de créer une fonction component
 function Footer() {
   return (
     <footer>
-      <a href="#">Mentions légales</a>
+      <Link to="/mentions-legales">Mentions légales</Link>
     </footer>
   )
 }

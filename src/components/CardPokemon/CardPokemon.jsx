@@ -6,6 +6,9 @@ import { Link } from "react-router-dom"
 export function CardPokemon(props) {
   let poke = props.data
   const [isOpen, setIsOpen] = useState(false)
+  let color = getColorHexa(poke.apiTypes[0].name)
+  let secondColor = poke.apiTypes.length > 1 ? getColorHexa(poke.apiTypes[1].name) : color
+  let secondType = poke.apiTypes.length > 1 ? " / " + poke.apiTypes[1].name : ""
 
   return (
     <article
@@ -19,8 +22,8 @@ export function CardPokemon(props) {
       <div
         className="cardInner"
         style={{
-          backgroundColor: getColorHexa(poke.apiTypes[0].name),
-          borderColor: getColorHexa(poke.apiTypes[0].name),
+          background: `linear-gradient(125deg, ${color} 0%,  ${color} 50%, ${secondColor} 50%,  ${secondColor} 100%)`,
+          borderImage: `linear-gradient(to right, ${color},   ${secondColor} )`,
         }}
       >
         <span
@@ -43,7 +46,7 @@ export function CardPokemon(props) {
             <img src={poke.image} alt={poke.name} title={poke.name} />
           </picture>
           <figcaption>
-            <span className="types">{poke.apiTypes[0].name}</span>
+            <span className="types">{poke.apiTypes[0].name + secondType}</span>
             <h2>{poke.name}</h2>
             <ol>
               <li>Points de vie : {poke.stats.HP}</li>
